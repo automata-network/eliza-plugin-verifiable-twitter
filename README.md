@@ -80,10 +80,6 @@ To build the project, run:
 pnpm build
 ```
 
-## Contributing
-
-Contributions are welcome! Please follow the guidelines in the `CONTRIBUTING.md` file.
-
 ## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for details.
+This project is licensed under the Apache2 License. See the `LICENSE` file for details.
