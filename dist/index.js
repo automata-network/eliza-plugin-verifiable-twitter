@@ -69,6 +69,9 @@ var VerifiableTwitterSubagentProvider = class {
     const payload = JSON.stringify({ jsonrpc: "2.0", id: 1, method: "tweet", params: [params] });
     elizaLogger.info("[VerifiableTwitterSubagent] send tweet:", tweetContent);
     const response = await send_rpc_request(this.subagentUrl, "/", payload);
+    if (response.error) {
+      throw new Error(`[VerifiableTwitterSubagent] error: ${response.error.message}`);
+    }
     return response.result;
   }
 };
@@ -242,7 +245,7 @@ var postAction = {
       elizaLogger2.info(`attestation report: ${attestationReport}`);
       return true;
     } catch (error) {
-      elizaLogger2.error("Error in post action:", error);
+      elizaLogger2.error(`Error in post action: ${error}`);
       return false;
     }
   },

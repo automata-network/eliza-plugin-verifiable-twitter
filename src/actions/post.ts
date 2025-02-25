@@ -114,7 +114,7 @@ export const postAction: Action = {
             elizaLogger.info(`attestation report: ${attestationReport}`);
             return true;
         } catch (error) {
-            elizaLogger.error("Error in post action:", error);
+            elizaLogger.error(`Error in post action: ${error}`);
             return false;
         }
     },
